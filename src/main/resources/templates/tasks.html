@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+<h1>Lista de Tarefas</h1>
+<a href="/task/new">Nova Tarefa</a>
+<table>
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Prioridade</th>
+        <th>Realizado</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.name}"></td>
+        <td th:text="${task.priority}"></td>
+        <td th:text="${task.completed ? 'Sim' : 'Não'}"></td>
+        <td>
+            <a th:href="@{/task/{id}(id=${task.id})}">Ver</a>
+            <a th:href="@{/task/edit/{id}(id=${task.id})}">Editar</a>
+            <a th:href="@{/task/delete/{id}(id=${task.id})}">Excluir</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Visualizar Tarefa</title>
+</head>
+<body>
+<h1>Detalhes da Tarefa</h1>
+<div>
+    <strong>Nome:</strong> <span th:text="${task.name}"></span>
+</div>
+<div>
+    <strong>Descrição:</strong> <span th:text="${task.description}"></span>
+</div>
+<div>
+    <strong>Prioridade:</strong> <span th:text="${task.priority}"></span>
+</div>
+<div>
+    <strong>Realizado:</strong> <span th:text="${task.completed ? 'Sim' : 'Não'}"></span>
+</div>
+<a th:href="@{/}">Voltar</a>
+</body>
+</html>
