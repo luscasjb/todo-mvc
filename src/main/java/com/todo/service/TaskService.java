@@ -32,27 +32,4 @@ public class TaskService {
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
-
-    // Ordena por prioridade de forma descendente
-/*    public List<Task> list() {
-        Sort sort = Sort.by("prioridade").descending().and(
-                Sort.by("nome").ascending()
-        );
-        return taskRepository.findAll(sort);
-    }
-
-    public List<Task> create(Task task) {
-        taskRepository.save(task);
-        return list();
-    }
-
-    public List<Task> update() {
-        taskRepository.save(task);
-        return list();
-    }
-
-    public List<Task> delete(Long id) {
-        taskRepository.deleteById(id);
-        return list();
-    }*/
 }
